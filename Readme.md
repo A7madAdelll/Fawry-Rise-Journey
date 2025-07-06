@@ -22,10 +22,13 @@ Make sure you have the following installed:
 
 
 
-## My assumptions:
+## 💡 My Assumptions
 
-    1- there can be only one store 
-    2- there can be multible users sharing the same store
-    3- I got ambiguty in the expire dates if i assume that the   whole items in the exact product has the same expiry date that makes no sense and also if there is some of the products expired then in the test case the function provided cart.add(product,quantity) so there is no selection for the user to choose.
- ## uml
+- There can be only **one store**.
+- There can be **multiple users** sharing the same store.
+- I encountered **ambiguity in product expiry**:
+  - If I assume that all items in a given product share the same expiry date, that doesn’t make sense.
+  - Also, if some of the product units are expired, the test case uses `cart.add(product, quantity)`, which doesn’t allow the user to select specific units.
+  - So I assumed expired items are **automatically excluded**, and the user cannot manually pick between expired and non-expired items.
+
 
