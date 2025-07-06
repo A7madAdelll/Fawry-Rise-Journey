@@ -21,7 +21,8 @@ Make sure you have the following installed:
    ```
 
 ## task 
-.![task]("https://fawry-internship.notion.site/Fawry-Rise-Journey-Challenge-22573781f9438098a901f353c7de2039")
+[Click here to view the task](https://fawry-internship.notion.site/Fawry-Rise-Journey-Challenge-22573781f9438098a901f353c7de2039)
+
 
 ## 💡 My Assumptions
 
