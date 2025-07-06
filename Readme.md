@@ -20,7 +20,8 @@ Make sure you have the following installed:
    npx ts-node src/demo.ts
    ```
 
-
+## task 
+.![task]("https://fawry-internship.notion.site/Fawry-Rise-Journey-Challenge-22573781f9438098a901f353c7de2039")
 
 ## 💡 My Assumptions
 
@@ -30,5 +31,6 @@ Make sure you have the following installed:
   - If I assume that all items in a given product share the same expiry date, that doesn’t make sense.
   - Also, if some of the product units are expired, the test case uses `cart.add(product, quantity)`, which doesn’t allow the user to select specific units.
   - So I assumed expired items are **automatically excluded**, and the user cannot manually pick between expired and non-expired items.
+
 
 
