@@ -33,7 +33,9 @@ Make sure you have the following installed:
   - Also, if some of the product units are expired, the test case uses `cart.add(product, quantity)`, which doesn’t allow the user to select specific units.
   - So I assumed expired items are **automatically excluded**, and the user cannot manually pick between expired and non-expired items.
 
-## uml 
-![uml]("https://github.com/A7madAdelll/Fawry-Rise-Journey/blob/main/uml/uml.jpg")
+## UML
+
+![UML](https://raw.githubusercontent.com/A7madAdelll/Fawry-Rise-Journey/main/uml/uml.jpg)
+
 
 
