@@ -19,7 +19,6 @@ type ProductClass =
   | typeof Tv;
 class Inventory {
   public products: Record<ProductsTypes, { product: Product }>;
-  private feesOnShipingPerKg = 0.5;
 
   constructor() {
     this.products = {
@@ -55,9 +54,6 @@ class Inventory {
     return this.products[productClass.name as ProductsTypes].product.quantity;
   }
 
-  getFeesPerKg() {
-    return this.feesOnShipingPerKg;
-  }
   purchace(ProductsType: ProductsTypes, quantity: number): boolean {
     if (this.products[ProductsType].product.quantity >= quantity) {
       this.products[ProductsType].product.quantity -= quantity;

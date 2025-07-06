@@ -16,7 +16,9 @@ function checkout(customer: Customer, cart: Cart) {
 const store = Store.getInstance(0.1);
 const ecommerceTest = new ECommerceController(store);
 const customer1 = ecommerceTest.createCustomer("ahmed", 10000);
+const castomer2 = ecommerceTest.createCustomer("mohamed", 10000);
 const cart1 = ecommerceTest.getCustomerCart(customer1);
+const cart2 = ecommerceTest.getCustomerCart(castomer2);
 console.log("just for refference");
 console.log("user balance = ", customer1.balance);
 console.log("                     price      quantity      weight");
@@ -27,7 +29,10 @@ console.log(`Mobile             =  800         10               no weight `);
 console.log(`MobleScratchCards  =  5           10               no weight `);
 
 try {
+  cart1.add(Biscuits, 10);
   checkout(customer1, cart1);
+  cart2.add(Biscuits, 1);
+  checkout(castomer2, cart2);
 } catch (err) {
   if (err instanceof Error) {
     console.log(err.message);
