@@ -1,4 +1,4 @@
-import { Customer } from "./models/custorme/customer";
+import { Customer } from "./models/customer/customer";
 import { Store } from "./models/ecommerce/store";
 import { Biscuits } from "./models/products/biscuits";
 import { Cheese } from "./models/products/cheese";
@@ -32,8 +32,8 @@ class ECommerceController {
   constructor(store: Store) {
     this.store = store;
   }
-  createCustomer(name: string, palance: number) {
-    const customer = new Customer(name, palance, this.store, this);
+  createCustomer(name: string, balance: number) {
+    const customer = new Customer(name, balance, this.store, this);
     this.customers.push(customer);
     return customer;
   }
@@ -70,6 +70,8 @@ class ECommerceController {
     const reciptTotal = [];
 
     const cart = customer.cart;
+    if (Object.keys(cart.getCartItems()).length === 0)
+      throw new Error("Cart is empty");
     const cartItems = cart.getCartItems();
     let orderSubTotal = 0;
     let shippingFees = 0;
@@ -79,10 +81,10 @@ class ECommerceController {
     recipt.push("- * Checkout receipt **");
 
     for (const key in cartItems) {
-      if (customer.palance < cartItems[key].price) {
+      if (customer.balance < cartItems[key].price) {
         throw new Error("Insufficient funds");
       }
-      customer.palance -= cartItems[key].price;
+      customer.balance -= cartItems[key].price;
       paidAmount += cartItems[key].price;
       orderSubTotal += cartItems[key].price;
       if (cartItems[key].weight) {
@@ -101,14 +103,16 @@ class ECommerceController {
     reciptTotal.push(`amount:        ${paidAmount}$`);
 
     reciptShipment.push(`Total package weight ${shippingWeight}kg`);
-    console.log("\n\n\n\n\n");
+    console.log("\n\n");
     console.log(
       reciptShipment.join("\n\n"),
       "\n\n",
       recipt.join("\n\n"),
       "\n\n",
       ".....................\n\n",
-      reciptTotal.join("\n\n")
+      reciptTotal.join("\n\n"),
+      "\n\n",
+      `Balance: ${customer.balance} $`
     );
   }
 }

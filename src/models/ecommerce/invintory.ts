@@ -30,7 +30,7 @@ class Inventory {
         product: new Cheese(50, 1, new Date("2022-01-01"), 1000),
       },
       Tv: {
-        product: new Tv(1000, 1, 1000),
+        product: new Tv(1000, 5, 1000),
       },
       Mobile: {
         product: new Mobile(800, 10),

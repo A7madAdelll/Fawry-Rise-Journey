@@ -42,13 +42,19 @@ class Cart {
   }
 
   add(productClass: ProductClass, quantity: number) {
+    if (quantity <= 0) {
+      throw new Error("Quantity must be greater than 0");
+    }
+
     const canAddingBeDone = this.ecommerceController.CheckIfCanAddProductToCart(
       productClass,
       quantity
     );
 
     if (!canAddingBeDone) {
-      throw new Error(`Not enough ${productClass.name} in the store`);
+      throw new Error(
+        `Not enough ${convertProductClassToString(productClass)} in the store`
+      );
     }
 
     const key = convertProductClassToString(productClass);
