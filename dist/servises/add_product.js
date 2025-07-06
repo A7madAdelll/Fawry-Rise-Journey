@@ -1,0 +1,15 @@
+"use strict";
+// import { store } from "../models/store";
+// import { Cart } from "../models/custorme/cart/cart";
+// import { Biscuits } from "../models/products/biscuits";
+// import { Cheese } from "../models/products/cheese";
+// import { Mobile } from "../models/products/mobile";
+// import { MobleScratchCards } from "../models/products/mobile_scratch_cards";
+// import { Tv } from "../models/products/tv";
+// const cart = new Cart();
+// cart.add(Biscuits, 1);
+// cart.add(Cheese, 1);
+// cart.add(Mobile, 1);
+// cart.add(MobleScratchCards, 1);
+// cart.add(Tv, 1);
+// console.log(cart.getItems());
